@@ -1,31 +1,40 @@
-Opis
-Ten projekt wykorzystuje dane kredytowe z niemieckiego banku do przewidywania ryzyka kredytowego (dobry/zły kredyt) za pomocą modelu regresji logistycznej. Głównym celem jest zbudowanie modelu klasyfikacyjnego i ocena jego skuteczności.
+Ten projekt wykorzystuje algorytm regresji logistycznej do przewidywania ryzyka kredytowego na podstawie niemieckich danych kredytowych. Model klasyfikuje kredyty jako "dobry" (niski poziom ryzyka) lub "zły" (wysoki poziom ryzyka) na podstawie cech klienta.
 
 Funkcjonalności
 Wstępne przetwarzanie danych (mapowanie wartości kategorycznych, usuwanie braków danych).
-Budowanie modelu Random Forest z hiperparametrami.
+Skalowanie cech za pomocą StandardScaler.
+Trenowanie modelu regresji logistycznej z optymalnymi hiperparametrami.
 Ocena modelu za pomocą:
 Dokładności (accuracy),
 Raportu klasyfikacji (classification report).
-Predykcja ryzyka kredytowego dla nowych danych.
+Analiza ważności cech wpływających na ryzyko kredytowe.
+Predykcja dla nowych klientów.
 Dane wejściowe
-Dane klientów, takie jak wiek, płeć, cel kredytu, kwota kredytu, oszczędności, itp.
+Cechy klientów, takie jak wiek, płeć, cel kredytu, kwota kredytu, oszczędności, itp.
 Wymagania
 Python
-Biblioteki: pandas, numpy, scikit-learn
+Biblioteki: pandas, scikit-learn
 Sposób działania
 Wczytanie i wstępne przetwarzanie danych:
 
-Mapowanie wartości tekstowych na wartości numeryczne.
-Przygotowanie danych do modelu.
+Usunięcie brakujących danych.
+Zamiana wartości tekstowych na numeryczne (np. "male" → 0, "female" → 1).
+Skalowanie cech:
+
+Dane są skalowane za pomocą StandardScaler, aby zapewnić lepsze działanie modelu regresji logistycznej.
 Trenowanie modelu:
 
-Random Forest z wybranymi hiperparametrami.
+Model regresji logistycznej jest trenowany na zbiorze treningowym.
 Ocena modelu:
 
-Obliczenie dokładności i analiza ważności cech.
+Obliczenie dokładności oraz wygenerowanie raportu klasyfikacji.
+Analiza cech:
+
+Obliczenie ważności cech, aby określić, które czynniki mają największy wpływ na ryzyko kredytowe.
 Predykcja:
 
-Przewidywanie ryzyka kredytowego dla nowych klientów.
+Przewidywanie ryzyka kredytowego na podstawie nowych danych wejściowych.
 Wyniki
-Model ocenia, czy dany kredyt jest "dobry" (niski poziom ryzyka) czy "zły" (wysokie ryzyko), opierając się na cechach klientów. Wynik jest prezentowany jako przewidywana etykieta.
+Dokładność modelu: Wyświetlana w konsoli.
+Ważność cech: Analiza wpływu każdej cechy na decyzję modelu.
+Przykładowe predykcje: Model przewiduje, czy kredyt jest "dobry" czy "zły" dla nowych przypadków.
